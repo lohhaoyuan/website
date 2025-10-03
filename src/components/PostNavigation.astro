@@ -34,7 +34,7 @@ const isSubpost = !!parentPost
       <span class="w-full text-left text-sm text-balance text-ellipsis">
         {
           olderPost?.data.title ||
-            (isSubpost ? 'No older subpost' : "You're at the oldest post!")
+            (isSubpost ? 'no older subpost' : "you're at the oldest post!")
         }
       </span>
     </div>
@@ -59,7 +59,7 @@ const isSubpost = !!parentPost
             Parent Post
           </span>
           <span class="w-full text-center text-sm text-balance text-ellipsis">
-            {parentPost?.data.title || 'No parent post'}
+            {parentPost?.data.title || 'no parent post'}
           </span>
         </div>
       </Link>
@@ -82,7 +82,7 @@ const isSubpost = !!parentPost
       <span class="w-full text-right text-sm text-balance text-ellipsis">
         {
           newerPost?.data.title ||
-            (isSubpost ? 'No newer subpost' : "You're at the newest post!")
+            (isSubpost ? 'no newer subpost' : "you're at the newest post")
         }
       </span>
     </div>

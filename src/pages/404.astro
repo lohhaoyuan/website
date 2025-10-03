@@ -9,21 +9,25 @@ import { cn } from '@/lib/utils'
 
 <Layout class="max-w-3xl">
   <PageHead slot="head" title="404" />
-  <Breadcrumbs items={[{ label: '???', icon: 'lucide:circle-help' }]} />
+  <Breadcrumbs items={[{ label: 'where the fuck', icon: 'lucide:circle-help' }]} />
 
   <section
     class="flex flex-col items-center justify-center gap-y-4 text-center"
   >
     <div class="max-w-md">
-      <h1 class="mb-4 text-3xl font-medium">404: Page not found</h1>
-      <p class="prose">Oops! The page you're looking for doesn't exist.</p>
+      
+
+      <h1 class="mb-4 text-3xl font-medium">404 (page not found)</h1>
+      <img src="/surprisedpikachu.jpg" alt="Surprised Pikachu" class="mx-auto mb-4" />
+
+      <p class="prose foreground">how badly did you fuck up to end up here?</p>
     </div>
     <Link
       href="/"
       class={cn(buttonVariants({ variant: 'outline' }), 'flex gap-x-1.5 group')}
     >
       <span class="transition-transform group-hover:-translate-x-1">&larr;</span
-      > Go to home page
+      > stop being stupid
     </Link>
   </section>
 </Layout>

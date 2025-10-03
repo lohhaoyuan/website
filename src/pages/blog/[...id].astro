@@ -1,6 +1,7 @@
 ---
-import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Badge from '@/components/Badge.astro'
 import Link from '@/components/Link.astro'
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import PostHead from '@/components/PostHead.astro'
 import PostNavigation from '@/components/PostNavigation.astro'
 import SubpostsHeader from '@/components/SubpostsHeader.astro'
@@ -83,7 +84,7 @@ const tocSections = await getTOCSections(currentPostId)
     <div class="col-start-2">
       <Breadcrumbs
         items={[
-          { href: '/blog', label: 'Blog', icon: 'lucide:library-big' },
+          { href: '/blog', label: 'blog', icon: 'lucide:library-big' },
           ...(isCurrentSubpost && parentPost
             ? [
                 {
@@ -115,7 +116,7 @@ const tocSections = await getTOCSections(currentPostId)
           alt={post.data.title}
           width={1200}
           height={630}
-          class="col-span-full mx-auto w-full max-w-5xl object-cover"
+          class="col-span-full mx-auto w-full max-w-5xl object-cover border-2 rounded-lg" 
         />
       )
     }
@@ -132,35 +133,6 @@ const tocSections = await getTOCSections(currentPostId)
         <div
           class="text-muted-foreground divide-border mb-4 flex flex-col items-center justify-center divide-y text-xs sm:flex-row sm:flex-wrap sm:divide-x sm:divide-y-0 sm:text-sm"
         >
-          {
-            authors.length > 0 && (
-              <div class="flex w-full items-center justify-center gap-x-2 py-2 sm:w-fit sm:px-2 sm:py-0 first:sm:pl-0 last:sm:pr-0">
-                {authors.map((author) => (
-                  <div class="flex items-center gap-x-1.5">
-                    <Image
-                      src={author.avatar}
-                      alt={author.name}
-                      width={20}
-                      height={20}
-                      class="rounded-full"
-                    />
-                    {author.isRegistered ? (
-                      <Link
-                        href={`/authors/${author.id}`}
-                        underline
-                        class="text-foreground"
-                      >
-                        <span>{author.name}</span>
-                      </Link>
-                    ) : (
-                      <span>{author.name}</span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )
-          }
-
           <div
             class="flex w-full items-center justify-center gap-2 py-2 sm:w-fit sm:px-2 sm:py-0 first:sm:pl-0 last:sm:pr-0"
           >
@@ -198,23 +170,15 @@ const tocSections = await getTOCSections(currentPostId)
             post.data.tags &&
               post.data.tags.length > 0 &&
               post.data.tags.map((tag) => (
-                <a
-                  href={`/tags/${tag}`}
-                  class={badgeVariants({ variant: 'secondary' })}
-                >
-                  <Icon name="lucide:hash" class="size-3" />
-                  {tag}
-                </a>
+                <Link href={`/tags/${tag}`}>
+                  <Badge text={tag} />
+                </Link>
               ))
           }
         </div>
       </div>
 
-      <PostNavigation
-        newerPost={navigation.newer}
-        olderPost={navigation.older}
-        parentPost={isCurrentSubpost ? navigation.parent : undefined}
-      />
+      
     </section>
 
     {

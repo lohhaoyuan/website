@@ -6,11 +6,11 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(date: Date) {
-  return Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  }).format(date)
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Add leading zero for single digit months
+  const day = date.getDate().toString().padStart(2, '0'); // Add leading zero for single digit days
+
+  return `${year}-${month}-${day}`;
 }
 
 export function calculateWordCountFromHtml(

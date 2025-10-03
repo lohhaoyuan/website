@@ -4,11 +4,12 @@
 
 @theme inline {
   --font-sans:
-    Geist, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    Inter, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-mono:
     Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
+
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -51,36 +52,51 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --background: rgb(255, 252, 240);
+  --foreground: rgb(16, 15, 15);
+  --primary: rgb(16, 15, 15);
+  --primary-foreground: rgb(111, 110, 105);
+  --secondary: rgb(230, 228, 217);
+  --secondary-foreground: rgb(111, 110, 105);
+  --muted: rgb(242, 240, 229);
+  --muted-foreground: rgb(120, 110, 105);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
+  --border: (111, 110, 105);
   --ring: oklch(0.708 0 0);
+  --highlight: rgba(94, 64, 157, 0.35);
 }
 
 [data-theme='dark'] {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --background: rgb(16, 15, 15);
+  --foreground: rgb(206, 205, 195);
+  --primary: rgb(206, 205, 195);
+  --primary-foreground: rgb(28, 27, 26);
   --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --secondary-foreground: rgb(206, 205, 195);
+  --muted: rgb(28, 27, 26);
+  --muted-foreground: rgb(135, 133, 128);
+  --accent: rgb(40, 39, 38);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
+  --border: rgb(135, 133, 128);
   --ring: oklch(0.556 0 0);
+  --highlight: rgba(139, 126, 200, 0.35);
+}
+
+::selection {
+  background: var(--highlight); /* text color */
 }
 
 @layer base {
@@ -92,3 +108,4 @@
     @apply border-border outline-ring/50 tracking-tight;
   }
 }
+
