@@ -4,40 +4,45 @@ import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
 import { buttonVariants } from '@/components/ui/button'
 import Layout from '@/layouts/Layout.astro'
-import { cn } from '@/lib/utils'
 ---
 
 <Layout class="max-w-3xl">
   <PageHead slot="head" title="404" />
-  <Breadcrumbs items={[{ label: 'where the fuck', icon: 'lucide:circle-help' }]} />
+  <Breadcrumbs
+    items={[{ label: 'where the fuck', icon: 'lucide:circle-help' }]}
+  />
 
   <section
     class="flex flex-col items-center justify-center gap-y-4 text-center"
   >
     <div class="max-w-md">
-      
-
       <h1 class="mb-4 text-3xl font-medium">404 (page not found)</h1>
-      <img src="/surprisedpikachu.jpg" alt="Surprised Pikachu" class="mx-auto mb-4" />
+      <img
+        src="/surprisedpikachu.jpg"
+        alt="Surprised Pikachu"
+        class="mx-auto mb-4"
+      />
 
       <p class="prose foreground">how badly did you fuck up to end up here?</p>
     </div>
     <Link
-  href="/"
-  class={buttonVariants({ variant: "outline" }) + " group relative inline-flex items-center justify-center px-6"}
->
-  <!-- arrow, anchored left -->
-  <span class="absolute inset-y-0 left-3 flex items-center">
-    <span class="opacity-0 translate-x-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-      &larr;
-    </span>
-  </span>
+      href="/"
+      class={buttonVariants({ variant: 'outline' }) +
+        ' group relative inline-flex items-center justify-center px-6'}
+    >
+      <!-- arrow, anchored left -->
+      <span class="absolute inset-y-0 left-3 flex items-center">
+        <span
+          class="translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+        >
+          &larr;
+        </span>
+      </span>
 
-  <!-- label -->
-  <span class="transition-transform duration-300 group-hover:translate-x-2">
-    stop being stupid
-  </span>
-</Link>
-
+      <!-- label -->
+      <span class="transition-transform duration-300 group-hover:translate-x-2">
+        stop being stupid
+      </span>
+    </Link>
   </section>
 </Layout>

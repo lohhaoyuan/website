@@ -3,8 +3,7 @@ import type { IconMap, SocialLink, Site } from '@/types'
 export const SITE: Site = {
   title: 'hao yuan',
   href: 'https://lohhaoyuan.com',
-  description:
-    'website',
+  description: 'website',
   author: 'hao yuan',
   locale: 'en-US',
   featuredPostCount: 2,
@@ -23,7 +22,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: 'https://github.com/lohhaoyuan',
     label: 'GitHub',
   },
-  
+
   {
     href: 'mailto:221409L@student.hci.edu.sg',
     label: 'Email',
