@@ -12,13 +12,13 @@ const { title, href } = Astro.props
 <div class="not-prose group mt-6 flex justify-center">
   <a
     href={href}
-    class="hover:bg-muted inline-flex w-full items-center rounded-sm justify-between border px-3 py-3 no-underline transition-colors duration-200"
+    class="hover:bg-muted inline-flex w-full items-center justify-between rounded-sm border px-3 py-3 no-underline transition-colors duration-200"
   >
-    <div class="flex items-center ml-1.5 gap-3 transition-transform duration-300 group-hover:-translate-x-2">
+    <div class="ml-1.5 flex items-center gap-3">
       <Icon name="lucide:file-text" class="size-4" />
       <div class="flex flex-col">
-        <div class="text-muted-foreground text-xs"> first subpost</div>
-        
+        <div class="text-muted-foreground text-xs">first subpost</div>
+
         <div class="font-medium">
           {title}
         </div>
@@ -26,7 +26,7 @@ const { title, href } = Astro.props
     </div>
     <Icon
       name="lucide:arrow-right"
-      class="-translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+      class="-translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
     />
   </a>
 </div>

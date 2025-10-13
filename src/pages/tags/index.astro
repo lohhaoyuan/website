@@ -2,7 +2,6 @@
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
-import { badgeVariants } from '@/components/ui/badge'
 import Layout from '@/layouts/Layout.astro'
 import { getSortedTags } from '@/lib/data-utils'
 import { Icon } from 'astro-icon/components'
@@ -14,17 +13,31 @@ const sortedTags = await getSortedTags()
   <PageHead slot="head" title="Tags" />
   <Breadcrumbs items={[{ label: 'tags', icon: 'lucide:tags' }]} />
 
-  <div class="flex flex-col gap-4">
-    <div class="flex flex-wrap gap-2">
+  <div class="flex flex-col gap-6">
+    <!-- header -->
+    <div>
+      <h1 class="text-2xl font-semibold tracking-tight">all tags</h1>
+    </div>
+
+    <!-- tag grid -->
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {
         sortedTags.map(({ tag, count }) => (
           <Link
             href={`/tags/${tag}`}
-            class={badgeVariants({ variant: 'secondary' })}
+            class={`hover:bg-secondary/50 rounded-md border p-4 transition-colors duration-300 ease-in-out`}
           >
-            <Icon name="lucide:hash" class="size-3" />
-            {tag}
-            <span class="text-muted-foreground ml-1.5">({count})</span>
+            <div class="flex items-center gap-2 text-base leading-none font-medium">
+              <Icon
+                name="lucide:hash"
+                class="text-muted-foreground group-hover:text-foreground size-4 transition-colors"
+              />
+              <span>{tag}</span>
+            </div>
+
+            <span class="text-muted-foreground mt-2 text-xs">
+              {count} post{count === 1 ? '' : 's'}
+            </span>
           </Link>
         ))
       }

@@ -112,12 +112,12 @@ const tocSections = await getTOCSections(currentPostId)
     {
       post.data.image && (
         <Image
-  src={post.data.image}
-  alt={post.data.title}
-  width={1200}
-  height={630}
-class="col-span-full sm:col-start-2 sm:col-span-1 justify-self-center w-full max-w-5xl rounded-lg border-2 object-cover"/>
-
+          src={post.data.image}
+          alt={post.data.title}
+          width={1200}
+          height={630}
+          class="col-span-full w-full max-w-5xl justify-self-center rounded-lg border-2 object-cover sm:col-span-1 sm:col-start-2"
+        />
       )
     }
 
@@ -177,11 +177,11 @@ class="col-span-full sm:col-start-2 sm:col-span-1 justify-self-center w-full max
           }
         </div>
       </div>
-       <PostNavigation
-      newerPost={navigation.newer}
-      olderPost={navigation.older}
-      parentPost={isCurrentSubpost ? navigation.parent : undefined}
-    />
+      <PostNavigation
+        newerPost={navigation.newer}
+        olderPost={navigation.older}
+        parentPost={isCurrentSubpost ? navigation.parent : undefined}
+      />
     </section>
 
     {
@@ -204,8 +204,6 @@ class="col-span-full sm:col-start-2 sm:col-span-1 justify-self-center w-full max
         />
       )
     }
-
-   
   </section>
 
   <Button
