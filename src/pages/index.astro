@@ -12,7 +12,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
 
 <Layout class="max-w-3xl">
   <PageHead slot="head" title="Home" />
-
+ <!--
   <section class="flex flex-col gap-y-4">
     <ul class="flex flex-col gap-y-4">
       {
@@ -26,14 +26,14 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
         )
       }
     </ul>
-  <!--
+ 
     <div class="flex justify-center">
       <Link
         href="/blog"
         class={buttonVariants({ variant: 'outline' }) +
           ' group relative inline-flex items-center justify-center px-6'}
       >
-        <!-- label -->
+       
         <span
           class="transition-transform duration-300 group-hover:-translate-x-2"
         >
