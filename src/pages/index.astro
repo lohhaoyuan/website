@@ -14,7 +14,6 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
   <PageHead slot="head" title="Home" />
 
   <section class="flex flex-col gap-y-4">
-    <h2 class="text-xl font-medium">latest posts</h2>
     <ul class="flex flex-col gap-y-4">
       {
         blog.length > 0 ? (
@@ -24,7 +23,6 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
             </li>
           ))
         ) : (
-          <li class="text-muted-foreground">no posts</li>
         )
       }
     </ul>
